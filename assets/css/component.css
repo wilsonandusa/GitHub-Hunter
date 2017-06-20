@@ -38,7 +38,7 @@
   width: 90%;
   height: 50px;
   margin: 0 auto;
-  background-color: rgb(131, 173, 239);
+  background-color: rgb(168, 226, 244);
   margin-top: 10px;
   border: #ffffff medium solid;
   border-radius: 10px;
@@ -50,4 +50,11 @@
   font-family: "Times New Roman", Times, serif;
   font-style: italic;
   font-size: 20px;
+}
+
+.right_button_box {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align:center;
 }
