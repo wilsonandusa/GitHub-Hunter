@@ -13,7 +13,6 @@ function createWindow () {
   // Create the browser window.
   mainWindow = new BrowserWindow({width: config.osx.main_width, height: config.osx.main_height, resizable: false})
 
-
   mainWindow.loadURL(url.format({
     pathname: path.join(__dirname, './index.html'),
     protocol: 'file:',

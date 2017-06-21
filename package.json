@@ -21,6 +21,9 @@
   },
   "dependencies": {
     "bootstrap-slider": "^9.8.0",
-    "electron-settings": "^3.1.1"
+    "crawler": "^1.0.5",
+    "electron-settings": "^3.1.1",
+    "scraperjs": "^1.2.0",
+    "website-scraper": "^3.1.0"
   }
 }
