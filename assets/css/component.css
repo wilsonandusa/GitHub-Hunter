@@ -34,6 +34,23 @@
   font-size: 20px;
 }
 
+.middle_button_box {
+  width: 90%;
+  height: 100px;
+  margin: 0 auto;
+  margin-top: 10px;
+  border: #cdcdcd medium solid;
+  border-radius: 10px;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  text-align: center;
+  vertical-align: middle;
+  line-height: 45px;
+  font-family: "Times New Roman", Times, serif;
+  font-style: italic;
+  font-size: 20px;
+}
+
 .right_bar {
   width: 90%;
   height: 50px;

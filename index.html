@@ -22,7 +22,7 @@
 
           </div>
         <div class="middle_section" style="overflow-y: scroll;">
-          <div class="middle_bar">Target <i class="fa fa-github fa-lg" aria-hidden="true"></i></div>
+          <div class="middle_bar" id='showcase'>Target <i class="fa fa-github fa-lg" aria-hidden="true"></i></div>
         </div>
         <div class="right_section" style="overflow-y: scroll;">
           <div class="right_bar">Recommendation <i class="fa fa-star fa-lg" aria-hidden="true"></i></div>
@@ -51,7 +51,8 @@
             <button type="button" class="btn btn-outline-primary btn-block">Open Source Operating Systems</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Programming Languages</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+             id="programming-languages-btn" onclick='{crawlingOneUrl("https://github.com/showcases/programming-languages")}'>Programming Languages</button>
             </div>
             <div class="right_button_box">
             <button type="button" class="btn btn-outline-primary btn-block">Web Application Framework</button>
