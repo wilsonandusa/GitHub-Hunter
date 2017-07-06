@@ -49,6 +49,21 @@ function crawlingOneUrl (url) {
           topRow.className = 'row'
           buttonRow.className = 'row'
           topRow.style.margin = '5px'
+          // set up description
+          var description = document.createElement('div')
+          description.className = 'middle_box_desc_row'
+          var language = document.createElement('font')
+          language.color = 'red'
+          language.innerHTML = 'written in ' + reposLang[i]
+          var info = document.createElement('div')
+          info.style.marginLeft = '10px'
+          info.style.marginRight = '10px'
+          info.size = '3'
+          info.innerHTML = ' Description: ' + reposInfo[i]
+          // setup button info row
+          description.appendChild(language)
+          description.appendChild(info)
+          buttonRow.appendChild(description)
           // set up repos two info rows
           var rightDiv = document.createElement('div')
           rightDiv.style.marginLeft = '5px'
@@ -59,8 +74,8 @@ function crawlingOneUrl (url) {
 
 
           // setup repos Name
-          var name = document.createElement('a')
-          name.innerHTML = reposNames[i]
+          var name = document.createElement('u')
+          name.innerHTML = '#' + (i + 1) + ' ' + reposNames[i]
           name.id = i
           name.addEventListener('click', function () {
             shell.openExternal(reposLinks[this.id])
