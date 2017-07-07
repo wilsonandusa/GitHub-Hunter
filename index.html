@@ -22,12 +22,13 @@
 
           </div>
         <div class="middle_section" style="overflow-y: scroll;">
-          <div class="middle_bar" id='showcase'>Target <i class="fa fa-github fa-lg" aria-hidden="true"></i></div>
+          <div class="middle_bar" id='target'>Target <i class="fa fa-github fa-lg" aria-hidden="true"></i></div>
+          <div id='showcase'></div>
         </div>
         <div class="right_section" style="overflow-y: scroll;">
           <div class="right_bar">Recommendation <i class="fa fa-star fa-lg" aria-hidden="true"></i></div>
             <div class="right_button_box">
-            <button  type="button" class="btn btn-outline-danger">Developers</button>
+            <button  type="button" class="btn btn-outline-danger" >Developers</button>
             &nbsp;
             <button  type="button" class="btn btn-outline-info">Organizations</button>
             </div>
@@ -39,35 +40,48 @@
             <button  type="button" class="btn btn-outline-warning">Swift</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Front-end JavaScript frameworks</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/front-end-javascript-frameworks")}'>Front-end JavaScript frameworks</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Great for new contributors!</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/great-for-new-contributors")}'>Great for new contributors!</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Data Visualization</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/data-visualization")}'>Data Visualization</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Open Source Operating Systems</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/open-source-operating-systems")}'>Open Source Operating Systems</button>
             </div>
             <div class="right_button_box">
             <button type="button" class="btn btn-outline-primary btn-block"
              id="programming-languages-btn" onclick='{crawlingOneUrl("https://github.com/showcases/programming-languages")}'>Programming Languages</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Web Application Framework</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/web-application-frameworks")}'>Web Application Frameworks</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Virtual Reality</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/virtual-reality")}'>Virtual Reality</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Emoji</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/emoji")}'>Emoji</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Text Editor</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/text-editors")}'>Text Editors</button>
             </div>
             <div class="right_button_box">
-            <button type="button" class="btn btn-outline-primary btn-block">Open Souce Integrations</button>
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/open-source-integrations")}'>Open Souce Integrations</button>
+            </div>
+            <div class="right_button_box">
+            <button type="button" class="btn btn-outline-primary btn-block"
+            onclick='{crawlingOneUrl("https://github.com/showcases/game-engines")}'>Game Engines</button>
             </div>
           </div>
     </div>
