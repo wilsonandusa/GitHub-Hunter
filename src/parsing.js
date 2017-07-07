@@ -2,7 +2,7 @@ var Crawler = require('crawler')
 var shell = require('electron').shell
 
 // document.getElementById('programming-languages-btn').onclick =
-crawlingOneUrl('https://github.com/showcases/programming-languages')
+// crawlingOneUrl('https://github.com/showcases/programming-languages')
 
 
 function crawlingOneUrl (url) {
@@ -41,7 +41,10 @@ function crawlingOneUrl (url) {
             }
           })
         })
-
+        var node = document.getElementById('showcase')
+        while (node.hasChildNodes()) {
+          node.removeChild(node.lastChild)
+        }
         for (var i = 0; i < reposNames.length; i++) {
           // set up info rows
           var topRow = document.createElement('div')
