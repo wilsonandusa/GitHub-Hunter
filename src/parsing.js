@@ -3,9 +3,41 @@ var shell = require('electron').shell
 
 // document.getElementById('programming-languages-btn').onclick =
 // crawlingOneUrl('https://github.com/showcases/programming-languages')
+crawlingDiycode('https://www.diycode.cc/trends/Developers')
+function crawlingDiycode (url) {
+  var c = new Crawler({
+    maxConnections: 10,
+    callback: function (error, res, done) {
+      if (error) {
+        console.log(error)
+      } else {
+        var reposName = []
+        var reposStar = []
+        var reposImg = []
+        var reposLink = []
+        var $ = res.$
+        $('.list-group-item').each(function (i, elem) {
+          reposImg[i] = $(this).find('img').attr('src')
+          reposLink[i] = 'https://www.diycode.cc' + $(this).attr('href')
+          $(this).find('span').each(function (index, element) {
+            if ($(element).attr('class') === 'hidden-xs hidden-sm') {
+              reposName[i] = $(element).text().replace(/\s/g, '')
+            }
+            if ($(element).attr('class') === 'stargazers_count pull-right') {
+              reposStar[i] = $(element).text().replace(/\s/g, '')
+            }
+          })
+        })
+      }
+      done()
+    }
+  })
+  c.queue([
+    url
+  ])
+}
 
-
-function crawlingOneUrl (url) {
+function crawlingGitHub (url) {
   var start = Date.now()
   var c = new Crawler({
     maxConnections: 10,
