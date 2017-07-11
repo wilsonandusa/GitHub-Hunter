@@ -62,6 +62,7 @@
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
   background-color: #ffffff;
+  background-size: 65px, 65px;
 }
 
 .middle_box_info_row_name {
