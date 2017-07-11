@@ -3,7 +3,7 @@ var shell = require('electron').shell
 
 // document.getElementById('programming-languages-btn').onclick =
 // crawlingOneUrl('https://github.com/showcases/programming-languages')
-crawlingDiycode('https://www.diycode.cc/trends/Developers')
+// crawlingDiycode('https://www.diycode.cc/trends/Developers')
 function crawlingDiycode (url) {
   var c = new Crawler({
     maxConnections: 10,
@@ -11,23 +11,73 @@ function crawlingDiycode (url) {
       if (error) {
         console.log(error)
       } else {
-        var reposName = []
+        var reposNames = []
         var reposStar = []
         var reposImg = []
-        var reposLink = []
+        var reposLinks = []
         var $ = res.$
         $('.list-group-item').each(function (i, elem) {
           reposImg[i] = $(this).find('img').attr('src')
-          reposLink[i] = 'https://www.diycode.cc' + $(this).attr('href')
           $(this).find('span').each(function (index, element) {
             if ($(element).attr('class') === 'hidden-xs hidden-sm') {
-              reposName[i] = $(element).text().replace(/\s/g, '')
+              reposNames[i] = $(element).text().replace(/\s/g, '')
+              reposLinks[i] = 'https://github.com/' + $(element).text().replace(/\s/g, '')
             }
             if ($(element).attr('class') === 'stargazers_count pull-right') {
               reposStar[i] = $(element).text().replace(/\s/g, '')
             }
           })
         })
+        var node = document.getElementById('showcase')
+        while (node.hasChildNodes()) {
+          node.removeChild(node.lastChild)
+        }
+        for (var i = 0; i < reposNames.length; i++) {
+          // set up info rows
+          var topRow = document.createElement('div')
+          topRow.className = 'row'
+          topRow.style.margin = '5px'
+          // set up description
+
+          // set up repos two info rows
+          var rightDiv = document.createElement('div')
+          rightDiv.style.marginLeft = '5px'
+          var nameBar = document.createElement('div')
+          nameBar.className = 'middle_box_info_row_name'
+          var starForkBar = document.createElement('div')
+          starForkBar.className = 'middle_box_info_row_star_fork'
+
+
+          // setup repos Name
+          var name = document.createElement('u')
+          name.innerHTML = '#' + (i + 1) + ' ' + reposNames[i]
+          name.id = i
+          name.addEventListener('click', function () {
+            shell.openExternal(reposLinks[this.id])
+          })
+          nameBar.appendChild(name)
+          starForkBar.innerHTML = 'Star: ' + reposStar[i]
+
+          rightDiv.appendChild(nameBar)
+          rightDiv.appendChild(starForkBar)
+
+          var boxList = document.getElementById('showcase')
+          var box = document.createElement('div')
+          box.className = 'middle_button_box'
+
+          // setUp icon
+          var boxIcon = document.createElement('div')
+          boxIcon.className = 'middle_box_icon'
+          boxIcon.style.backgroundImage = "url('" + reposImg[i] + "')"
+
+          topRow.appendChild(boxIcon)
+          topRow.appendChild(rightDiv)
+
+          box.appendChild(topRow)
+
+          // append box elements
+          boxList.appendChild(box)
+        }
       }
       done()
     }
@@ -141,7 +191,7 @@ function crawlingGitHub (url) {
         }
         // console.log(reposNames)
         // console.log(reposLinks)
-        // console.log(reposImg)
+        console.log(reposImg)
         // console.log(reposInfo)
         // console.log(reposFork)
         // console.log(reposStar)
